@@ -26,7 +26,7 @@ const names = [
   ];
 
   function LoadFreelancers() {
-    const freelancersList = document.queryelector('freelancersList');
+    const freelancersList = document.querySelector('#freelancersList');
     freelancersList.innerHTML = freelancers.map(freelancer => {
         return `<li>${freelancer.name} - <span class="price-highlight">$${freelancer.price}</span> - ${freelancer.occupation}</li>`;
     }).join('');
@@ -51,7 +51,7 @@ setInterval(() => {
     LoadFreelancers();
 
     const averagePrice = calculateAveragePrice();
-    console.log(`Average starting price: $${averagePrice}`);
+    document.getElementById('averagePrice').innerHTML = `Average starting price: $${averagePrice}`;
 }, 3000);
 
 function calculateAveragePrice() {
